@@ -4,7 +4,7 @@ describe('Pizza', function() {
         expect(testPizza.quantity).to.equal(1);
         expect(testPizza.price).to.equal(0);
         expect(testPizza.pizzaSize).to.equal("S");
-        expect(testPizza.toppings).to.eql([]);
+        expect(testPizza.pizzaToppings).to.eql([]);
     });
 
     it('adds the finalCost method to all pizzas', function() {
@@ -31,4 +31,8 @@ describe('Topping', function() {
         expect(testToppings.summary()).to.equal('You have ordered a pizza with the following toppings: <ul><li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li></ul>');
     });
 
+    it('adds the topingCost method to all toppings', function() {
+        var testToppings = new Toppings(1, 1, 1, 1, 1, 1, 1, 1);
+        expect(testToppings.toppingCost()).to.equal(2);
+    });
 });

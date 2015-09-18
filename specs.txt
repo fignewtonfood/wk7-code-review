@@ -15,3 +15,7 @@ Output: "You ordered 2 of our delicious M pizza(s), at a cost of $3 each, for a 
 4) Adds the summary method to all toppings
 Input: toppings object containing (1, 1, 1, 1, 1, 1, 1, 1)
 Output: "You have ordered a pizza with the following toppings: <ul><li>double bacon</li><li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li></ul>"
+
+4) Adds the toppingCost method to all toppings
+Input: toppings object containing (1, 1, 1, 1, 1, 1, 1, 1)
+Output: 8
