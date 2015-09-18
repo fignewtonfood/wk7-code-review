@@ -25,4 +25,10 @@ describe('Topping', function() {
         expect(testToppings.sausage).to.equal(1);
         expect(testToppings.tomato).to.equal(1);
     });
+
+    it('adds the summary method to all toppings', function() {
+        var testToppings = new Toppings(1, 1, 1, 1, 1, 1, 1, 1);
+        expect(testToppings.summary()).to.equal('You have ordered a pizza with the following toppings: <ul><li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li></ul>');
+    });
+
 });

@@ -20,6 +20,52 @@ function Toppings(bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage
     this.tomato = tomato;
 }
 
+Toppings.prototype.summary = function () {
+    var myPizzaSummary = "You have ordered a pizza with the following toppings: <ul>";
+    if (this.bacon == 2) {
+        myPizzaSummary += "<li>double bacon</li>";
+    } else if (this.bacon == 1) {
+        myPizzaSummary += "<li>bacon</li>";
+    }
+    if (this.greenPepper == 2) {
+        myPizzaSummary += "<li>double green peppers</li>";
+    } else if (this.greenPepper == 1) {
+        myPizzaSummary += "<li>green peppers</li>";
+    }
+    if (this.mushroom == 2) {
+        myPizzaSummary += "<li>double mushrooms</li>";
+    } else if (this.mushroom == 1) {
+        myPizzaSummary += "<li>mushrooms</li>";
+    }
+    if (this.olive == 2) {
+        myPizzaSummary += "<li>double olives</li>";
+    } else if (this.olive == 1) {
+        myPizzaSummary += "<li>olives</li>";
+    }
+    if (this.onion == 2) {
+        myPizzaSummary += "<li>double onions</li>";
+    } else if (this.onion == 1) {
+        myPizzaSummary += "<li>onions</li>";
+    }
+    if (this.pepperoni == 2) {
+        myPizzaSummary += "<li>double pepperoni</li>";
+    } else if (this.pepperoni == 1) {
+        myPizzaSummary += "<li>pepperoni</li>";
+    }
+    if (this.sausage == 2) {
+        myPizzaSummary += "<li>double sausage</li>";
+    } else if (this.sausage == 1) {
+        myPizzaSummary += "<li>sausage</li>";
+    }
+    if (this.tomato == 2) {
+        myPizzaSummary += "<li>double tomatoes</li>";
+    } else if (this.tomato == 1) {
+        myPizzaSummary += "<li>tomatoes</li>";
+    }
+    myPizzaSummary += "</ul>"
+    return myPizzaSummary;
+}
+
 function resetPizza() {
     $("input").val("");
 }
@@ -51,7 +97,15 @@ $(document).ready(function(){
             var newToppings = new Toppings(inputtedBacon, inputtedGreenPepper, inputtedMushroom, inputtedOlive, inputtedOnion, inputtedPepperoni, inputtedSausage, inputtedTomato);
             newPizza.pizzaToppings.push(newToppings);
         });
+
+        $("ul#order").append("<li><span class='pizza'>" + newPizza.finalCost() + "</span></li>");
+
+        $(".pizza").last().click(function(){
+
+        });
     });
+
+
 
     $("#choose-size").click(function(){
         $("#show-toppings").show();
