@@ -1,11 +1,12 @@
-function Pizza(quantity, price, toppings){
+function Pizza(quantity, price, pizzaSize, toppings){
     this.quantity = quantity;
     this.price = price;
+    this.pizzaSize = pizzaSize;
     this.toppings = [];
 }
 
 Pizza.prototype.finalCost = function() {
-    return "You ordered " + this.quantity + " pizza(s), at a cost of $" + this.price + " each, for a total of $" + (this.quantity*this.price) + "  Thanks!"
+    return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price + " each, for a total of $" + (this.quantity*this.price) + "  Thanks!"
 }
 
 function Toppings(bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage, tomato) {

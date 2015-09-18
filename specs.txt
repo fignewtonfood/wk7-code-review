@@ -1,13 +1,13 @@
 SPEC SHEET FOR WORD REPLACER
 
 1) Creates a new pizza with the given specifications
-Input: (1, 0, [])
-Output: pizza object containing (1, 0, [])
+Input: (1, 0, "S", [])
+Output: pizza object containing (1, 0, "S", [])
 
 2) Creates a new set of toppings with the given specifications
 Input: (1, 1, 1, 1, 1, 1, 1, 1)
 Output: toppings object containing (1, 1, 1, 1, 1, 1, 1, 1)
 
 3) Adds the finalCost method to all pizzas
-Input: pizza object containing (2, 3, [])
-Output: "You ordered 2 pizza(s), at a cost of $3 each, for a total of $6  Thanks!"
+Input: pizza object containing (2, 3, "M", [])
+Output: "You ordered 2 of our delicious M pizza(s), at a cost of $3 each, for a total of $6  Thanks!"

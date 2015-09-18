@@ -1,14 +1,15 @@
 describe('Pizza', function() {
     it('creates a new pizza with the given specifications', function() {
-        var testPizza = new Pizza(1, 0);
+        var testPizza = new Pizza(1, 0, "S");
         expect(testPizza.quantity).to.equal(1);
         expect(testPizza.price).to.equal(0);
+        expect(testPizza.pizzaSize).to.equal("S");
         expect(testPizza.toppings).to.eql([]);
     });
 
     it('adds the finalCost method to all pizzas', function() {
-        var testPizza = new Pizza(2, 3);
-        expect(testPizza.finalCost()).to.equal("You ordered 2 pizza(s), at a cost of $3 each, for a total of $6  Thanks!");
+        var testPizza = new Pizza(2, 3, "M");
+        expect(testPizza.finalCost()).to.equal("You ordered 2 of our delicious M pizza(s), at a cost of $3 each, for a total of $6  Thanks!");
     });
 });
 
