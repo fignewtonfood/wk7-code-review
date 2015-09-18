@@ -16,8 +16,8 @@ Pizza.prototype.finalCost = function() {
     return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price.toFixed(2) + " each, for a total of $" + (this.quantity*this.price).toFixed(2) + "  Thanks!"
 }
 
-Pizza.prototype.summary = function () {
-    var myPizzaSummary = "You have ordered a pizza with the following toppings: <ul>";
+Pizza.prototype.pizzaSummary = function () {
+    var myPizzaSummary = "";
     if (this.bacon == 2) {
         myPizzaSummary += "<li>double bacon</li>";
     } else if (this.bacon == 1) {
@@ -58,7 +58,7 @@ Pizza.prototype.summary = function () {
     } else if (this.tomato == 1) {
         myPizzaSummary += "<li>tomatoes</li>";
     }
-    myPizzaSummary += "</ul>"
+    myPizzaSummary += ""
     return myPizzaSummary;
 }
 
@@ -74,7 +74,7 @@ Pizza.prototype.pizzaCost = function () {
     } else if (this.pizzaSize == "LARGE") {
         individualToppingCost += 9;
     } else {
-        individualToppingCost += 7;
+        individualToppingCost += 11;
     }
     return individualToppingCost;
 }
@@ -104,7 +104,11 @@ $(document).ready(function(){
         newPizza.pizzaCost();
         newPizza.price = individualToppingCost;
 
-        $("ul#order").append("<li><span class='pizza'>" + newPizza.finalCost() + "</span></li>");
+        $("#show-order").show();
+
+        $("ul#order").append("<li class='nobullet emphatic'>" + newPizza.finalCost() + "</li>");
+        $("ul#order").append("<li class='nobullet'> Your pizza has the following toppings:</li>");
+        $("ul#order").append(newPizza.pizzaSummary());
 
         $(".pizza").last().click(function(){
         });
