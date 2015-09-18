@@ -62,11 +62,10 @@ Pizza.prototype.summary = function () {
     return myPizzaSummary;
 }
 
-var individualToppingCost;
+var individualToppingCost = 0;
 
 Pizza.prototype.toppingCost = function () {
-    var individualToppingCost = (this.bacon+this.greenPepper+this.mushroom+this.olive+this.onion+this.pepperoni+this.sausage+this.tomato)*(0.25)
-    // $this.price = individualToppingCost;
+    individualToppingCost = (parseFloat(this.bacon)+parseFloat(this.greenPepper)+parseFloat(this.mushroom)+parseFloat(this.olive)+parseFloat(this.onion)+parseFloat(this.pepperoni)+parseFloat(this.sausage)+parseFloat(this.tomato))/4;
     return individualToppingCost;
 }
 
@@ -76,50 +75,28 @@ function resetPizza() {
 
 //jQuery
 $(document).ready(function(){
-    // $("#addPizza").click(function(){
-    //     $(".new-pizza").clone().last().appendTo('.new-pizza')
-    //     // $resetPizza();
-    // });
-
     $("form#new-pizzas").submit(function(event){
         event.preventDefault();
         var inputtedQuantity = $("input#quantity").val();
-        var inputtedPrice = 0;
-        var inputtedPizzaSize = $("input.pizzaSize").val();
-        var newPizza = new Pizza(inputtedQuantity, inputtedPrice, inputtedPizzaSize);
+        var inputtedPrice = individualToppingCost;
+        var inputtedPizzaSize = $("input.pizzaSize:checked").val();
+        var inputtedBacon = $("input.baconTopping:checked").val();
+        var inputtedGreenPepper = $("input.greenPepperTopping:checked").val();
+        var inputtedMushroom = $("input.mushroomTopping:checked").val();
+        var inputtedOlive = $("input.oliveTopping:checked").val();
+        var inputtedOnion = $("input.onionTopping:checked").val();
+        var inputtedPepperoni = $("input.pepperoniTopping:checked").val();
+        var inputtedSausage = $("input.sausageTopping:checked").val();
+        var inputtedTomato = $("input.tomatoTopping:checked").val();
 
-        $(".new-toppings").each(function(){
-            var inputtedBacon = $(this).find("input.baconTopping").val();
-            var inputtedGreenPepper = $(this).find("input.greenPepperTopping").val();
-            var inputtedMushroom = $(this).find("input.mushroomTopping").val();
-            var inputtedOlive = $(this).find("input.oliveTopping").val();
-            var inputtedOnion = $(this).find("input.onionTopping").val();
-            var inputtedPepperoni = $(this).find("input.pepperoniTopping").val();
-            var inputtedSausage = $(this).find("input.sausageTopping").val();
-            var inputtedTomato = $(this).find("input.tomatoTopping").val();
+        var newPizza = new Pizza(inputtedQuantity, inputtedPrice, inputtedPizzaSize, inputtedBacon, inputtedGreenPepper, inputtedMushroom, inputtedOlive, inputtedOnion, inputtedPepperoni, inputtedSausage, inputtedTomato);
 
-            var newToppings = new Toppings(inputtedBacon, inputtedGreenPepper, inputtedMushroom, inputtedOlive, inputtedOnion, inputtedPepperoni, inputtedSausage, inputtedTomato);
-            newPizza.pizzaToppings.push(newToppings);
-        });
-
-        newToppings.toppingCost();
-        $newPizza.inputtedPrice = individualToppingCost;
+        newPizza.toppingCost();
+        newPizza.price = individualToppingCost;
 
         $("ul#order").append("<li><span class='pizza'>" + newPizza.finalCost() + "</span></li>");
 
         $(".pizza").last().click(function(){
-
         });
     });
-
-
-
-    $("#choose-size").click(function(){
-        $("#show-toppings").show();
-    });
-
-    $("#next").click(function(){
-        event.preventDefault();
-        $(".show-quantity").show();
-    })
 });

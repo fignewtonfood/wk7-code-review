@@ -11,61 +11,52 @@
         <div class="container">
             <h2>Make a pizza!</h2>
             <form id="new-pizzas">
-                <div class="new-pizza">
-                    <h3>Choose a size:</h3>
-                    <div class="form-group" id="choose-size">
-                        <input type="radio" name="pizzaSize" class="pizzaSize" value="SMALL" checked>Small
-                        <input type="radio" name="pizzaSize" class="pizzaSize" value="MEDIUM">Medium
-                        <input type="radio" name="pizzaSize" class="pizzaSize" value="LARGE">Large
-                        <input type="radio" name="pizzaSize" class="pizzaSize" value="XL">Xtra-Large
-                    </div> <!-- End of form-group -->
-                    <div class="form-group" id="show-toppings">
-                        <h3>Choose some toppings</h3>
-                        <div class="new-toppings">
-                            <input type="radio" name="baconTopping" class="baconTopping" value="0" checked> No Bacon
-                            <input type="radio" name="baconTopping" class="baconTopping" value="1"> Bacon
-                            <input type="radio" name="baconTopping" class="baconTopping" value="2">
-                            <label for="doubleBaconTopping">Double Bacon</label><br>
-                            <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="0" checked> No Green Peppers
-                            <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="1"> Green Peppers
-                            <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="2">
-                            <label for="doubleGreenPepperTopping">Double Green Peppers</label><br>
-                            <input type="radio" name="mushroomTopping" class="mushroomTopping" value="0" checked> No Mushrooms
-                            <input type="radio" name="mushroomTopping" class="mushroomTopping" value="1"> Mushrooms
-                            <input type="radio" name="mushroomTopping" class="mushroomTopping" value="2">
-                            <label for="doubleMushroomTopping">Double Mushrooms</label><br>
-                            <input type="radio" name="oliveTopping" class="oliveTopping" value="0" checked> No Olives
-                            <input type="radio" name="oliveTopping" class="oliveTopping" value="1"> Olives
-                            <input type="radio" name="oliveTopping" class="oliveTopping" value="2">
-                            <label for="doubleOliveTopping">Double Olives</label><br>
-                            <input type="radio" name="onionTopping" class="onionTopping" value="0" checked> No Onions
-                            <input type="radio" name="onionTopping" class="onionTopping" value="1"> Onions
-                            <input type="radio" name="onionTopping" class="onionTopping" value="2">
-                            <label for="doubleOnionTopping">Double Onions</label><br>
-                            <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="0" checked> No Pepperoni
-                            <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="1"> Pepperoni
-                            <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="2">
-                            <label for="doublePepperoniTopping">Double Pepperoni</label><br>
-                            <input type="radio" name="sausageTopping" class="sausageTopping" value="0" checked> No Sausage
-                            <input type="radio" name="sausageTopping" class="sausageTopping" value="1"> Sausage
-                            <input type="radio" name="sausageTopping" class="sausageTopping" value="2">
-                            <label for="doubleSausageTopping">Double Sausage</label><br>
-                            <input type="radio" name="tomatoTopping" class="tomatoTopping" value="0" checked> No Tomatoes
-                            <input type="radio" name="tomatoTopping" class="tomatoTopping" value="1"> Tomatoes
-                            <input type="radio" name="tomatoTopping" class="tomatoTopping" value="2">
-                            <label for="doubleTomatoTopping">Double Tomatoes</label><br>
-                        </div> <!-- End of new-toppings -->
-                        <button type="button" id="next" name="next">Next</button>
-                    </div> <!-- End of form-group -->
-                    <div class="form-group show-quantity">
-                        <label for="quantity">How many do you want?</label>
-                        <input type="number" name="quantity" id="quantity" value=1><br>
-                    </div> <!-- End of form-group -->
-                </div> <!-- End of new-pizza -->
-                <div class="show-quantity">
-                    <!-- <button type="button" class="btn" id="addPizza">Another Pizza?</button> -->
+                <h3>Choose a size:</h3>
+                <div class="form-group" id="choose-size">
+                    <input type="radio" name="pizzaSize" class="pizzaSize" required value="SMALL">Small
+                    <input type="radio" name="pizzaSize" class="pizzaSize" value="MEDIUM">Medium
+                    <input type="radio" name="pizzaSize" class="pizzaSize" value="LARGE">Large
+                    <input type="radio" name="pizzaSize" class="pizzaSize" value="XL">Xtra-Large
+
+                    <h3>Choose some toppings</h3>
+                    <input type="radio" name="baconTopping" class="baconTopping" value="0" checked> No Bacon
+                    <input type="radio" name="baconTopping" class="baconTopping" value="1"> Bacon
+                    <input type="radio" name="baconTopping" class="baconTopping" value="2">
+                    <label for="doubleBaconTopping">Double Bacon</label><br>
+                    <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="0" checked> No Green Peppers
+                    <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="1"> Green Peppers
+                    <input type="radio" name="greenPepperTopping" class="greenPepperTopping" value="2">
+                    <label for="doubleGreenPepperTopping">Double Green Peppers</label><br>
+                    <input type="radio" name="mushroomTopping" class="mushroomTopping" value="0" checked> No Mushrooms
+                    <input type="radio" name="mushroomTopping" class="mushroomTopping" value="1"> Mushrooms
+                    <input type="radio" name="mushroomTopping" class="mushroomTopping" value="2">
+                    <label for="doubleMushroomTopping">Double Mushrooms</label><br>
+                    <input type="radio" name="oliveTopping" class="oliveTopping" value="0" checked> No Olives
+                    <input type="radio" name="oliveTopping" class="oliveTopping" value="1"> Olives
+                    <input type="radio" name="oliveTopping" class="oliveTopping" value="2">
+                    <label for="doubleOliveTopping">Double Olives</label><br>
+                    <input type="radio" name="onionTopping" class="onionTopping" value="0" checked> No Onions
+                    <input type="radio" name="onionTopping" class="onionTopping" value="1"> Onions
+                    <input type="radio" name="onionTopping" class="onionTopping" value="2">
+                    <label for="doubleOnionTopping">Double Onions</label><br>
+                    <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="0" checked> No Pepperoni
+                    <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="1"> Pepperoni
+                    <input type="radio" name="pepperoniTopping" class="pepperoniTopping" value="2">
+                    <label for="doublePepperoniTopping">Double Pepperoni</label><br>
+                    <input type="radio" name="sausageTopping" class="sausageTopping" value="0" checked> No Sausage
+                    <input type="radio" name="sausageTopping" class="sausageTopping" value="1"> Sausage
+                    <input type="radio" name="sausageTopping" class="sausageTopping" value="2">
+                    <label for="doubleSausageTopping">Double Sausage</label><br>
+                    <input type="radio" name="tomatoTopping" class="tomatoTopping" value="0" checked> No Tomatoes
+                    <input type="radio" name="tomatoTopping" class="tomatoTopping" value="1"> Tomatoes
+                    <input type="radio" name="tomatoTopping" class="tomatoTopping" value="2">
+                    <label for="doubleTomatoTopping">Double Tomatoes</label><br>
+
+                    <label for="quantity">How many do you want?</label>
+                    <input type="number" name="quantity" id="quantity" value=1><br>
+
                     <button type="submit" class="btn" id="submit" name="submit">Place Order</button>
-                </div>
+                </div> <!-- End of form-group -->
             </form>
         </div> <!-- End of container -->
         <div id="show-order" class="container">
