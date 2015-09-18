@@ -16,16 +16,16 @@ describe('Pizza', function() {
 
     it('adds the finalCost method to all pizzas', function() {
         var testPizza = new Pizza(2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1);
-        expect(testPizza.finalCost()).to.equal("You ordered 2 of our delicious M pizza(s), at a cost of $3 each, for a total of $6  Thanks!");
+        expect(testPizza.finalCost()).to.equal("You ordered 2 of our delicious M pizza(s), at a cost of $3.00 each, for a total of $6.00  Thanks!");
     });
 
     it('adds the summary method to all pizzas', function() {
         var testPizza = new Pizza(2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1);
-        expect(testPizza.summary()).to.equal('You have ordered a pizza with the following toppings: <ul><li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li></ul>');
+        expect(testPizza.pizzaSummary()).to.equal('<li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li>');
     });
 
-    it('adds the toppingCost method to all pizzas', function() {
-        var testPizza = new Pizza(2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1);
-        expect(testPizza.toppingCost()).to.equal(2);
+    it('adds the finalCost method to all pizzas', function() {
+        var testPizza = new Pizza(1, 0, "MEDIUM", 1, 1, 1, 1, 1, 1, 1, 1);
+        expect(testPizza.pizzaCost()).to.equal(9);
     });
 });

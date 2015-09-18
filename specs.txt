@@ -6,12 +6,12 @@ Output: pizza object containing (1, 0, "S", 1, 1, 1, 1, 1, 1, 1, 1)
 
 2) Adds the finalCost method to all pizzas
 Input: pizza object containing (2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1)
-Output: "You ordered 2 of our delicious M pizza(s), at a cost of $3 each, for a total of $6  Thanks!"
+Output: "You ordered 2 of our delicious M pizza(s), at a cost of $3.00 each, for a total of $6.00  Thanks!"
 
 3) Adds the summary method to all pizzas
 Input: pizza object containing (2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1)
-Output: "You have ordered a pizza with the following toppings: <ul><li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li></ul>"
+Output: "<li>bacon</li><li>green peppers</li><li>mushrooms</li><li>olives</li><li>onions</li><li>pepperoni</li><li>sausage</li><li>tomatoes</li>"
 
-4) Adds the toppingCost method to all pizzas
-Input: toppings object containing (2, 3, "M", 1, 1, 1, 1, 1, 1, 1, 1)
-Output: 8
+4) Adds the finalCost method to all pizzas
+Input: toppings object containing (1, 0, "MEDIUM", 1, 1, 1, 1, 1, 1, 1, 1)
+Output: 9
