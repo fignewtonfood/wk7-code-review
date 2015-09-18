@@ -13,7 +13,7 @@ function Pizza(quantity, price, pizzaSize, bacon, greenPepper, mushroom, olive, 
 }
 
 Pizza.prototype.finalCost = function() {
-    return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price + " each, for a total of $" + (this.quantity*this.price) + "  Thanks!"
+    return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price.toFixed(2) + " each, for a total of $" + (this.quantity*this.price).toFixed(2) + "  Thanks!"
 }
 
 Pizza.prototype.summary = function () {
@@ -64,8 +64,18 @@ Pizza.prototype.summary = function () {
 
 var individualToppingCost = 0;
 
-Pizza.prototype.toppingCost = function () {
+Pizza.prototype.pizzaCost = function () {
+
     individualToppingCost = (parseFloat(this.bacon)+parseFloat(this.greenPepper)+parseFloat(this.mushroom)+parseFloat(this.olive)+parseFloat(this.onion)+parseFloat(this.pepperoni)+parseFloat(this.sausage)+parseFloat(this.tomato))/4;
+    if (this.pizzaSize == "SMALL") {
+        individualToppingCost += 5;
+    } else if (this.pizzaSize == "MEDIUM") {
+        individualToppingCost += 7;
+    } else if (this.pizzaSize == "LARGE") {
+        individualToppingCost += 9;
+    } else {
+        individualToppingCost += 7;
+    }
     return individualToppingCost;
 }
 
@@ -91,7 +101,7 @@ $(document).ready(function(){
 
         var newPizza = new Pizza(inputtedQuantity, inputtedPrice, inputtedPizzaSize, inputtedBacon, inputtedGreenPepper, inputtedMushroom, inputtedOlive, inputtedOnion, inputtedPepperoni, inputtedSausage, inputtedTomato);
 
-        newPizza.toppingCost();
+        newPizza.pizzaCost();
         newPizza.price = individualToppingCost;
 
         $("ul#order").append("<li><span class='pizza'>" + newPizza.finalCost() + "</span></li>");
