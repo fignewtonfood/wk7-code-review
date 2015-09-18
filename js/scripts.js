@@ -1,3 +1,4 @@
+// pizza constructor
 function Pizza(quantity, price, pizzaSize, bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage, tomato){
     this.quantity = quantity;
     this.price = price;
@@ -12,10 +13,12 @@ function Pizza(quantity, price, pizzaSize, bacon, greenPepper, mushroom, olive, 
     this.tomato = tomato;
 }
 
+//prototype to give summary of pizza cost
 Pizza.prototype.finalCost = function() {
     return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price.toFixed(2) + " each, for a total of $" + (this.quantity*this.price).toFixed(2) + "  Thanks!"
 }
 
+//prototype to summarize order
 Pizza.prototype.pizzaSummary = function () {
     var myPizzaSummary = "";
     if (this.bacon == 2) {
@@ -62,10 +65,11 @@ Pizza.prototype.pizzaSummary = function () {
     return myPizzaSummary;
 }
 
+//global variable defined so that all functions can use it
 var individualToppingCost = 0;
 
+//prototype to determine final cost of pizza
 Pizza.prototype.pizzaCost = function () {
-
     individualToppingCost = (parseFloat(this.bacon)+parseFloat(this.greenPepper)+parseFloat(this.mushroom)+parseFloat(this.olive)+parseFloat(this.onion)+parseFloat(this.pepperoni)+parseFloat(this.sausage)+parseFloat(this.tomato))/4;
     if (this.pizzaSize == "SMALL") {
         individualToppingCost += 5;
@@ -79,14 +83,11 @@ Pizza.prototype.pizzaCost = function () {
     return individualToppingCost;
 }
 
-function resetPizza() {
-    $("input").val("");
-}
-
 //jQuery
 $(document).ready(function(){
     $("form#new-pizzas").submit(function(event){
         event.preventDefault();
+        //grabbing inputs from form
         var inputtedQuantity = $("input#quantity").val();
         var inputtedPrice = individualToppingCost;
         var inputtedPizzaSize = $("input.pizzaSize:checked").val();
@@ -99,6 +100,7 @@ $(document).ready(function(){
         var inputtedSausage = $("input.sausageTopping:checked").val();
         var inputtedTomato = $("input.tomatoTopping:checked").val();
 
+        //instantiating
         var newPizza = new Pizza(inputtedQuantity, inputtedPrice, inputtedPizzaSize, inputtedBacon, inputtedGreenPepper, inputtedMushroom, inputtedOlive, inputtedOnion, inputtedPepperoni, inputtedSausage, inputtedTomato);
 
         newPizza.pizzaCost();
@@ -106,6 +108,7 @@ $(document).ready(function(){
 
         $("#show-order").show();
 
+        //output
         $("ul#order").append("<li class='nobullet emphatic'>" + newPizza.finalCost() + "</li>");
         $("ul#order").append("<li class='nobullet'> Your pizza has the following toppings:</li>");
         $("ul#order").append(newPizza.pizzaSummary());
