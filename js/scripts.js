@@ -1,15 +1,7 @@
-function Pizza(quantity, price, pizzaSize, pizzaToppings){
+function Pizza(quantity, price, pizzaSize, bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage, tomato){
     this.quantity = quantity;
     this.price = price;
     this.pizzaSize = pizzaSize;
-    this.pizzaToppings = [];
-}
-
-Pizza.prototype.finalCost = function() {
-    return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price + " each, for a total of $" + (this.quantity*this.price) + "  Thanks!"
-}
-
-function Toppings(bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage, tomato) {
     this.bacon = bacon;
     this.greenPepper = greenPepper;
     this.mushroom = mushroom;
@@ -20,7 +12,11 @@ function Toppings(bacon, greenPepper, mushroom, olive, onion, pepperoni, sausage
     this.tomato = tomato;
 }
 
-Toppings.prototype.summary = function () {
+Pizza.prototype.finalCost = function() {
+    return "You ordered " + this.quantity + " of our delicious " + this.pizzaSize + " pizza(s), at a cost of $" + this.price + " each, for a total of $" + (this.quantity*this.price) + "  Thanks!"
+}
+
+Pizza.prototype.summary = function () {
     var myPizzaSummary = "You have ordered a pizza with the following toppings: <ul>";
     if (this.bacon == 2) {
         myPizzaSummary += "<li>double bacon</li>";
@@ -67,9 +63,10 @@ Toppings.prototype.summary = function () {
 }
 
 var individualToppingCost;
-Toppings.prototype.toppingCost = function () {
+
+Pizza.prototype.toppingCost = function () {
     var individualToppingCost = (this.bacon+this.greenPepper+this.mushroom+this.olive+this.onion+this.pepperoni+this.sausage+this.tomato)*(0.25)
-    $this.price = individualToppingCost;
+    // $this.price = individualToppingCost;
     return individualToppingCost;
 }
 
