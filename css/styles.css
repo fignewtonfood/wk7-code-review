@@ -1,3 +1,7 @@
-#show-contact {
+#show-toppings {
+    display: none;
+}
+
+.show-quantity {
     display: none;
 }
