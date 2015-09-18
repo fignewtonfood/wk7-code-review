@@ -1,6 +1,6 @@
 # Pizza Order
 
-##### An app to allow a user to order a pizza and see the cost, 2015 September 11th
+##### An app to allow a user to order a pizza and see the cost, 2015 September 18th
 
 #### By Timothy White
 
