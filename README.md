@@ -1,16 +1,16 @@
-# Replacement
+# Pizza Order
 
-##### An app to find and replace within a block of text, 2015 September 11th
+##### An app to allow a user to order a pizza and see the cost, 2015 September 11th
 
 #### By Timothy White
 
 ## Description
 
-Using Javascript and jQuery, this app will search a selection for a string and replace all matching instances with a different string.
+Using Javascript and jQuery, this app will allow a user to order a pizza, choose custom toppings, and receive a final cost at the end.
 
 ## Setup
 
-* clone git repository: https://github.com/fignewtonfood/wk6_code_review.git
+* clone git repository: https://github.com/fignewtonfood/wk7_code_review.git
 * open index.html in browser
 
 ## Technologies Used
